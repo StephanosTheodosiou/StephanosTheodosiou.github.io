@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stephanos Theodosiou | Software Developer</title>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav id="navbar">
+      <div class="nav-logo">&lt;ST /&gt;</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#about" onclick="closeMobile()">About</a></li>
+        <li><a href="#skills" onclick="closeMobile()">Skills</a></li>
+        <li><a href="#experience" onclick="closeMobile()">Experience</a></li>
+        <li><a href="#projects" onclick="closeMobile()">Projects</a></li>
+        <li><a href="#education" onclick="closeMobile()">Education</a></li>
+        <li><a href="#contact" onclick="closeMobile()">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- ========== HERO ========== -->
+    <section id="hero">
+      <canvas id="three-canvas"></canvas>
+
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Available for opportunities
+        </div>
+
+        <h1 class="hero-title">
+          <span class="line">Stephanos</span>
+          <span class="line accent">Theodosiou</span>
+        </h1>
+
+        <p class="hero-sub">
+          <span id="typed-text"></span><span class="cursor-blink">|</span>
+        </p>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn-primary">View Projects</a>
+          <a href="#contact" class="btn-ghost">Contact Me</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num">4th</span>
+            <span class="stat-label">Year @ UCY</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">1yr+</span>
+            <span class="stat-label">Experience</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">10+</span>
+            <span class="stat-label">Technologies</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Avatar -->
+      <div class="hero-avatar">
+        <canvas id="avatar-canvas"></canvas>
+      </div>
+
+      <!-- Social Sidebar -->
+      <div class="social-sidebar">
+        <a
+          href="https://github.com/StephanosTheodosiou"
+          target="_blank"
+          title="GitHub"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/stephanos-theodosiou-9974882a5/"
+          target="_blank"
+          title="LinkedIn"
+        >
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:stef11.st81@gmail.com" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <div class="sidebar-line"></div>
+      </div>
+
+      <div class="scroll-indicator">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About <span class="accent">Me</span></h2>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              I'm a <strong>4th year Computer Science student</strong> at the
+              University of Cyprus, currently working as a
+              <strong>Software Developer at 3AHealth</strong> in Nicosia.
+            </p>
+            <p>
+              I'm passionate about building clean, performant applications —
+              from full-stack web systems to database-driven platforms. I enjoy
+              solving real problems with elegant code.
+            </p>
+            <p>
+              Outside of work and university, I'm constantly exploring new
+              technologies, contributing to projects, and pushing my skills
+              further in AI, cybersecurity, and modern web development.
+            </p>
+            <div class="about-tags">
+              <span class="tag">Angular</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Python</span>
+              <span class="tag">Java</span>
+              <span class="tag">.NET</span>
+              <span class="tag">SQL</span>
+            </div>
+          </div>
+          <div class="about-card reveal">
+            <div class="info-card">
+              <div class="info-row">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Nicosia, Cyprus</span>
+              </div>
+              <div class="info-row">
+                <i class="fas fa-university"></i>
+                <span>University of Cyprus</span>
+              </div>
+              <div class="info-row">
+                <i class="fas fa-briefcase"></i>
+                <span>Software Developer @ 3AHealth</span>
+              </div>
+              <div class="info-row">
+                <i class="fas fa-language"></i>
+                <span>Greek (Native) · English (C2)</span>
+              </div>
+              <div class="info-row">
+                <i class="fas fa-envelope"></i>
+                <span>stef11.st81@gmail.com</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SKILLS ========== -->
+    <section id="skills" class="section dark-section">
+      <div class="container">
+        <h2 class="section-title">My <span class="accent">Skills</span></h2>
+        <div class="skills-grid">
+          <div class="skill-card reveal">
+            <div class="skill-icon"><i class="fas fa-code"></i></div>
+            <h3>Frontend</h3>
+            <div class="skill-tags">
+              <span>Angular</span><span>React.js</span><span>TypeScript</span>
+              <span>HTML/CSS</span><span>JavaScript</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon"><i class="fas fa-server"></i></div>
+            <h3>Backend</h3>
+            <div class="skill-tags">
+              <span>.NET</span><span>PHP</span><span>Java</span>
+              <span>Python</span><span>C/C++/C#</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon"><i class="fas fa-database"></i></div>
+            <h3>Database</h3>
+            <div class="skill-tags">
+              <span>SQL Server</span><span>MySQL</span>
+              <span>Stored Procedures</span><span>Triggers</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon"><i class="fas fa-tools"></i></div>
+            <h3>Tools & DevOps</h3>
+            <div class="skill-tags">
+              <span>Git</span><span>GitHub</span><span>Azure DevOps</span>
+              <span>Swagger</span><span>SVN</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== EXPERIENCE ========== -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2 class="section-title">
+          Work <span class="accent">Experience</span>
+        </h2>
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Software Developer</h3>
+                <span class="timeline-badge current">Current</span>
+              </div>
+              <p class="timeline-company">
+                <i class="fas fa-building"></i> 3AHealth · Nicosia, Cyprus
+              </p>
+              <p class="timeline-date">
+                <i class="fas fa-calendar"></i> Jun 2025 – Present
+              </p>
+              <ul class="timeline-points">
+                <li>
+                  Front-end development with Angular & TypeScript, building
+                  modular UI components
+                </li>
+                <li>
+                  Full-stack development with Angular, .NET and JavaScript
+                </li>
+                <li>RESTful API integration using Angular's HTTPClient</li>
+                <li>
+                  Agile/Scrum ceremonies with Azure DevOps for task management
+                </li>
+                <li>
+                  Bug fixes, performance optimization and QA collaboration
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Full-Stack Intern Software Developer</h3>
+              </div>
+              <p class="timeline-company">
+                <i class="fas fa-building"></i> 3AHealth · Nicosia, Cyprus
+              </p>
+              <p class="timeline-date">
+                <i class="fas fa-calendar"></i> Jun 2024 – Jul 2024
+              </p>
+              <ul class="timeline-points">
+                <li>
+                  Completed Angular and Full Stack Developer courses (Udemy)
+                </li>
+                <li>Built a WordPress website for a real client</li>
+                <li>Debugging and testing internal Angular projects</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROJECTS ========== -->
+    <section id="projects" class="section dark-section">
+      <div class="container">
+        <h2 class="section-title">
+          Featured <span class="accent">Projects</span>
+        </h2>
+        <div class="projects-grid">
+          <div class="project-card reveal" data-tilt>
+            <div class="project-top">
+              <div class="project-icon"><i class="fas fa-car"></i></div>
+              <div class="project-links">
+                <a href="https://github.com/StephanosTheodosiou" target="_blank"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </div>
+            </div>
+            <h3>OSRH – Ride-Hailing System</h3>
+            <p>
+              Full-stack ride-hailing platform built with PHP & SQL Server.
+              Features role-based access, GDPR compliance, real-time ride
+              matching with Haversine formula, and SERIALIZABLE transaction
+              isolation.
+            </p>
+            <div class="project-tags">
+              <span>PHP</span><span>SQL Server</span><span>GDPR</span
+              ><span>Team Project</span>
+            </div>
+          </div>
+
+          <div class="project-card reveal" data-tilt>
+            <div class="project-top">
+              <div class="project-icon"><i class="fas fa-globe"></i></div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/StephanosTheodosiou/StephanosTheodosiou.github.io"
+                  target="_blank"
+                  ><i class="fab fa-github"></i
+                ></a>
+                <a href="https://stephanostheodosiou.github.io" target="_blank"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+              </div>
+            </div>
+            <h3>Personal Portfolio Website</h3>
+            <p>
+              This very website — built from scratch with HTML, CSS &
+              JavaScript. Features 3D Three.js background, GSAP scroll
+              animations, custom avatar, glassmorphism design and full mobile
+              responsiveness.
+            </p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span
+              ><span>Three.js</span><span>GSAP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== EDUCATION ========== -->
+    <section id="education" class="section">
+      <div class="container">
+        <h2 class="section-title">My <span class="accent">Education</span></h2>
+        <div class="education-grid">
+          <div class="edu-card reveal">
+            <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div class="edu-content">
+              <h3>BSc Computer Science</h3>
+              <p class="edu-school">University of Cyprus</p>
+              <p class="edu-date">2023 – Present · 4th Year</p>
+              <p class="edu-desc">
+                Studying core CS disciplines including Databases, NLP, AI,
+                Cybersecurity, Algorithms and Software Engineering.
+              </p>
+            </div>
+          </div>
+
+          <div class="edu-card reveal">
+            <div class="edu-icon"><i class="fas fa-school"></i></div>
+            <div class="edu-content">
+              <h3>High School Diploma</h3>
+              <p class="edu-school">Ethnomartiras Kyprianos Lyceum</p>
+              <p class="edu-date">2019 – 2022 · Grade: 18.25</p>
+              <p class="edu-desc">
+                Achieved 19.65 in Pancyprian Computer Science exams — awarded by
+                the Scientific & Technical Chamber of Cyprus (ETEK).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section id="contact" class="section dark-section">
+      <div class="container">
+        <h2 class="section-title">Get In <span class="accent">Touch</span></h2>
+        <p class="contact-sub">
+          I'm currently open to new opportunities. Whether you have a question
+          or just want to say hi — my inbox is always open!
+        </p>
+        <div class="contact-grid">
+          <a href="mailto:stef11.st81@gmail.com" class="contact-card reveal">
+            <i class="fas fa-envelope"></i>
+            <span>stef11.st81@gmail.com</span>
+          </a>
+          <a
+            href="https://github.com/StephanosTheodosiou"
+            target="_blank"
+            class="contact-card reveal"
+          >
+            <i class="fab fa-github"></i>
+            <span>StephanosTheodosiou</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/stephanos-theodosiou-9974882a5/"
+            target="_blank"
+            class="contact-card reveal"
+          >
+            <i class="fab fa-linkedin"></i>
+            <span>Stephanos Theodosiou</span>
+          </a>
+          <a href="tel:+35799158410" class="contact-card reveal">
+            <i class="fas fa-phone"></i>
+            <span>(+357) 99158410</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+      <p>
+        Designed & Built by <span class="accent">Stephanos Theodosiou</span> ·
+        2025
+      </p>
+      <p class="footer-sub">&lt;/code&gt; with ❤️ in Nicosia, Cyprus</p>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/three-bg.js"></script>
+    <script src="js/avatar.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
