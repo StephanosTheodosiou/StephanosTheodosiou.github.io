@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -82,6 +82,33 @@
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
 
+    <body>
+
+  <!-- ========== LOADING SCREEN ========== -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <div class="loader-logo">
+        <span class="bracket">&lt;</span>
+        <span class="letters">
+          <span class="letter">S</span><span class="letter">T</span>
+        </span>
+        <span class="bracket">/&gt;</span>
+      </div>
+      <div class="loader-bar">
+        <div class="loader-progress"></div>
+      </div>
+      <div class="loader-text">
+        <span>LOADING</span>
+        <span class="loader-percent">0%</span>
+      </div>
+    </div>
+    <div class="loader-grid"></div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
     <!-- ========== NAVBAR ========== -->
     <nav id="navbar">
       <div class="nav-logo">&lt;ST /&gt;</div>
@@ -92,8 +119,14 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <div class="hamburger" id="hamburger">
-        <span></span><span></span><span></span>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class="fas fa-moon moon-icon"></i>
+          <i class="fas fa-sun sun-icon"></i>
+        </button>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
       </div>
     </nav>
 

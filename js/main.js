@@ -1,4 +1,36 @@
 // ========== MAIN.JS ==========
+// ========== LOADING SCREEN ==========
+document.body.classList.add('loading');
+
+const loader = document.getElementById('loader');
+const loaderPercent = document.querySelector('.loader-percent');
+
+// Animate the percentage counter
+let percent = 0;
+const percentInterval = setInterval(() => {
+  percent += 2;
+  if (percent <= 100) {
+    loaderPercent.textContent = percent + '%';
+  } else {
+    clearInterval(percentInterval);
+  }
+}, 28);
+
+// Hide loader after content loads + minimum animation time
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    loader.classList.add('hidden');
+    document.body.classList.remove('loading');
+
+    // Remove loader from DOM after transition
+    setTimeout(() => {
+      loader.remove();
+    }, 700);
+  }, 1500);
+});
+
+
+
 
 // ---- Custom Cursor ----
 const cursor = document.querySelector('.cursor');
@@ -245,4 +277,25 @@ tabBtns.forEach(btn => {
       }, 300);
     }
   });
+});
+// ========== THEME TOGGLE ==========
+const themeToggle = document.getElementById('themeToggle');
+const htmlEl = document.documentElement;
+
+// Load saved theme or default to dark
+const savedTheme = localStorage.getItem('theme') || 'dark';
+htmlEl.setAttribute('data-theme', savedTheme);
+
+themeToggle.addEventListener('click', () => {
+  const currentTheme = htmlEl.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+  htmlEl.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+
+  // Ripple effect feedback
+  themeToggle.style.transform = 'scale(0.9)';
+  setTimeout(() => {
+    themeToggle.style.transform = '';
+  }, 150);
 });
