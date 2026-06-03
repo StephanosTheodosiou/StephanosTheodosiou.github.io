@@ -195,7 +195,8 @@ body {
   position: relative;
   z-index: 2;
   padding: 0 48px;
-  max-width: 700px;
+  max-width: 55%;
+  min-width: 320px;
 }
 
 .hero-badge {
@@ -228,13 +229,15 @@ body {
 }
 
 .hero-title {
-  font-size: clamp(48px, 8vw, 86px);
+  font-size: clamp(36px, 5.5vw, 76px);
   font-weight: 800;
-  line-height: 1.0;
+  line-height: 1.05;
   letter-spacing: -2px;
   margin-bottom: 20px;
-  overflow: hidden;
+  overflow: visible;
+  word-break: break-word;
 }
+  f
 
 .hero-title .line {
   display: block;
@@ -927,4 +930,59 @@ footer p {
   .hero-cta { flex-direction: column; }
   .btn-primary, .btn-ghost { text-align: center; }
   footer { padding: 32px 24px; }
+}
+/* ========== TABS ========== */
+.tab-switcher {
+  display: flex;
+  gap: 4px;
+  background: var(--bg-card);
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  padding: 4px;
+  width: fit-content;
+  margin-bottom: 48px;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tab-btn i { font-size: 13px; }
+
+.tab-btn:hover { color: var(--text-secondary); }
+
+.tab-btn.active {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(124,92,252,0.35);
+}
+
+.tab-content {
+  display: none;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.tab-content.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tab-content.animating {
+  display: block;
 }

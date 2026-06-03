@@ -29,9 +29,8 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
+        <li><a href="#journey">Journey</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="hamburger" id="hamburger">
@@ -58,7 +57,7 @@
       <div class="hero-content">
         <div class="hero-badge">
           <span class="badge-dot"></span>
-          Available for opportunities
+          Welcome to my portfolio!
         </div>
 
         <h1 class="hero-title">
@@ -71,7 +70,13 @@
         </p>
 
         <div class="hero-cta">
-          <a href="#projects" class="btn-primary">View Projects</a>
+          <a
+            href="Stephanos_Theodosiou_CV.pdf"
+            download="Stephanos_Theodosiou_CV.pdf"
+            class="btn-primary"
+          >
+            <i class="fas fa-download"></i> Download CV
+          </a>
           <a href="#contact" class="btn-ghost">Contact Me</a>
         </div>
 
@@ -228,64 +233,107 @@
       </div>
     </section>
 
-    <!-- ========== EXPERIENCE ========== -->
-    <section id="experience" class="section">
+    <!-- ========== EXPERIENCE & EDUCATION ========== -->
+    <section id="journey" class="section">
       <div class="container">
-        <h2 class="section-title">
-          Work <span class="accent">Experience</span>
-        </h2>
-        <div class="timeline">
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <h3>Software Developer</h3>
-                <span class="timeline-badge current">Current</span>
+        <h2 class="section-title">My <span class="accent">Journey</span></h2>
+
+        <!-- Tab Switcher -->
+        <div class="tab-switcher">
+          <button class="tab-btn active" data-tab="experience">
+            <i class="fas fa-briefcase"></i> Experience
+          </button>
+          <button class="tab-btn" data-tab="education">
+            <i class="fas fa-graduation-cap"></i> Education
+          </button>
+        </div>
+
+        <!-- Experience Tab -->
+        <div class="tab-content active" id="tab-experience">
+          <div class="timeline">
+            <div class="timeline-item reveal">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h3>Software Developer</h3>
+                  <span class="timeline-badge current">Current</span>
+                </div>
+                <p class="timeline-company">
+                  <i class="fas fa-building"></i> 3AHealth · Nicosia, Cyprus
+                </p>
+                <p class="timeline-date">
+                  <i class="fas fa-calendar"></i> Jun 2025 – Present
+                </p>
+                <ul class="timeline-points">
+                  <li>
+                    Front-end development with Angular & TypeScript, building
+                    modular UI components
+                  </li>
+                  <li>
+                    Full-stack development with Angular, .NET and JavaScript
+                  </li>
+                  <li>RESTful API integration using Angular's HTTPClient</li>
+                  <li>
+                    Agile/Scrum ceremonies with Azure DevOps for task management
+                  </li>
+                  <li>
+                    Bug fixes, performance optimization and QA collaboration
+                  </li>
+                </ul>
               </div>
-              <p class="timeline-company">
-                <i class="fas fa-building"></i> 3AHealth · Nicosia, Cyprus
-              </p>
-              <p class="timeline-date">
-                <i class="fas fa-calendar"></i> Jun 2025 – Present
-              </p>
-              <ul class="timeline-points">
-                <li>
-                  Front-end development with Angular & TypeScript, building
-                  modular UI components
-                </li>
-                <li>
-                  Full-stack development with Angular, .NET and JavaScript
-                </li>
-                <li>RESTful API integration using Angular's HTTPClient</li>
-                <li>
-                  Agile/Scrum ceremonies with Azure DevOps for task management
-                </li>
-                <li>
-                  Bug fixes, performance optimization and QA collaboration
-                </li>
-              </ul>
+            </div>
+
+            <div class="timeline-item reveal">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h3>Full-Stack Intern Software Developer</h3>
+                </div>
+                <p class="timeline-company">
+                  <i class="fas fa-building"></i> 3AHealth · Nicosia, Cyprus
+                </p>
+                <p class="timeline-date">
+                  <i class="fas fa-calendar"></i> Jun 2024 – Jul 2024
+                </p>
+                <ul class="timeline-points">
+                  <li>
+                    Completed Angular and Full Stack Developer courses (Udemy)
+                  </li>
+                  <li>Built a WordPress website for a real client</li>
+                  <li>Debugging and testing internal Angular projects</li>
+                </ul>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <h3>Full-Stack Intern Software Developer</h3>
+        <!-- Education Tab -->
+        <div class="tab-content" id="tab-education">
+          <div class="education-grid">
+            <div class="edu-card reveal">
+              <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+              <div class="edu-content">
+                <h3>BSc Computer Science</h3>
+                <p class="edu-school">University of Cyprus</p>
+                <p class="edu-date">2023 – Present · 4th Year</p>
+                <p class="edu-desc">
+                  Studying core CS disciplines including Databases, NLP, AI,
+                  Cybersecurity, Algorithms and Software Engineering.
+                </p>
               </div>
-              <p class="timeline-company">
-                <i class="fas fa-building"></i> 3AHealth · Nicosia, Cyprus
-              </p>
-              <p class="timeline-date">
-                <i class="fas fa-calendar"></i> Jun 2024 – Jul 2024
-              </p>
-              <ul class="timeline-points">
-                <li>
-                  Completed Angular and Full Stack Developer courses (Udemy)
-                </li>
-                <li>Built a WordPress website for a real client</li>
-                <li>Debugging and testing internal Angular projects</li>
-              </ul>
+            </div>
+
+            <div class="edu-card reveal">
+              <div class="edu-icon"><i class="fas fa-school"></i></div>
+              <div class="edu-content">
+                <h3>High School Diploma</h3>
+                <p class="edu-school">Ethnomartiras Kyprianos Lyceum</p>
+                <p class="edu-date">2019 – 2022 · Grade: 18.25</p>
+                <p class="edu-desc">
+                  Achieved 19.65 in Pancyprian Computer Science exams — awarded
+                  by the Scientific & Technical Chamber of Cyprus (ETEK).
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -345,40 +393,6 @@
             <div class="project-tags">
               <span>HTML</span><span>CSS</span><span>JavaScript</span
               ><span>Three.js</span><span>GSAP</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== EDUCATION ========== -->
-    <section id="education" class="section">
-      <div class="container">
-        <h2 class="section-title">My <span class="accent">Education</span></h2>
-        <div class="education-grid">
-          <div class="edu-card reveal">
-            <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-            <div class="edu-content">
-              <h3>BSc Computer Science</h3>
-              <p class="edu-school">University of Cyprus</p>
-              <p class="edu-date">2023 – Present · 4th Year</p>
-              <p class="edu-desc">
-                Studying core CS disciplines including Databases, NLP, AI,
-                Cybersecurity, Algorithms and Software Engineering.
-              </p>
-            </div>
-          </div>
-
-          <div class="edu-card reveal">
-            <div class="edu-icon"><i class="fas fa-school"></i></div>
-            <div class="edu-content">
-              <h3>High School Diploma</h3>
-              <p class="edu-school">Ethnomartiras Kyprianos Lyceum</p>
-              <p class="edu-date">2019 – 2022 · Grade: 18.25</p>
-              <p class="edu-desc">
-                Achieved 19.65 in Pancyprian Computer Science exams — awarded by
-                the Scientific & Technical Chamber of Cyprus (ETEK).
-              </p>
             </div>
           </div>
         </div>
