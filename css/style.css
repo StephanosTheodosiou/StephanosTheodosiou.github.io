@@ -847,7 +847,7 @@ body {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
 }
 
@@ -861,9 +861,11 @@ body {
   gap: 16px;
   text-decoration: none;
   color: var(--text-secondary);
-  font-size: 13px;
+  font-size: 12px;
   font-family: var(--font-mono);
   transition: var(--transition);
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .contact-card i {
