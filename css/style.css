@@ -551,65 +551,167 @@ body {
   font-size: 14px;
 }
 
-/* ========== SKILLS ========== */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
+/* ========== HEXAGON SKILLS GRID ========== */
+.skills-intro {
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 600px;
+  margin-bottom: 64px;
 }
 
-.skill-card {
-  background: var(--bg-card);
-  border: 0.5px solid var(--border);
-  border-radius: 16px;
-  padding: 32px;
-  transition: var(--transition);
-}
-
-.skill-card:hover {
-  border-color: var(--border-accent);
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(124,92,252,0.1);
-}
-
-.skill-icon {
-  width: 48px;
-  height: 48px;
-  background: var(--accent-dim);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.skill-icon i {
-  color: var(--accent);
-  font-size: 20px;
-}
-
-.skill-card h3 {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 16px;
-  color: var(--text-primary);
-}
-
-.skill-tags {
+.hex-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  justify-content: center;
+  gap: 8px 16px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
-.skill-tags span {
-  background: rgba(255,255,255,0.04);
+.hex {
+  width: 130px;
+  height: 150px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Offset every alternating row of 5 */
+.hex:nth-child(5n + 6) { margin-top: -50px; margin-left: 73px; }
+.hex:nth-child(5n + 7),
+.hex:nth-child(5n + 8),
+.hex:nth-child(5n + 9),
+.hex:nth-child(5n + 10) { margin-top: -50px; }
+
+.hex-inner {
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  background: var(--bg-card);
   border: 0.5px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Inner gradient glow on hover */
+.hex-inner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(124, 92, 252, 0.25), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.hex-inner i {
+  font-size: 32px;
   color: var(--text-secondary);
-  padding: 4px 10px;
-  border-radius: 6px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 1;
+}
+
+.hex-label {
   font-family: var(--font-mono);
   font-size: 10px;
-  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  transition: color 0.4s ease;
+}
+
+/* Hover effect */
+.hex:hover {
+  transform: translateY(-8px) scale(1.05);
+  z-index: 10;
+}
+
+.hex:hover .hex-inner {
+  background: rgba(124, 92, 252, 0.08);
+  border-color: var(--border-accent);
+  box-shadow: 0 12px 32px rgba(124, 92, 252, 0.25);
+}
+
+.hex:hover .hex-inner::before {
+  opacity: 1;
+}
+
+.hex:hover .hex-inner i {
+  color: var(--accent);
+  transform: scale(1.15);
+}
+
+.hex:hover .hex-label {
+  color: var(--accent-light);
+}
+
+/* Skill Categories Legend */
+.skill-legend {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 56px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.legend-dot.frontend { background: #7c5cfc; }
+.legend-dot.backend { background: #a98cff; }
+.legend-dot.database { background: #4ade80; }
+.legend-dot.devops { background: #fbbf24; }
+
+/* Responsive Hexagons */
+@media (max-width: 768px) {
+  .hex { width: 100px; height: 115px; }
+  .hex-inner i { font-size: 24px; }
+  .hex-label { font-size: 9px; }
+  .hex:nth-child(5n + 6) { margin-left: 56px; }
+
+  /* Smaller offset for mobile - 4 per row */
+  .hex-grid { gap: 6px 12px; }
+}
+
+@media (max-width: 480px) {
+  .hex { width: 84px; height: 96px; }
+  .hex-inner i { font-size: 20px; }
+  .hex-label { font-size: 8px; }
+  .hex:nth-child(5n + 6) { margin-left: 48px; }
+}
+
+/* Light theme tweaks */
+[data-theme="light"] .hex-inner i {
+  color: var(--text-secondary);
+}
+
+[data-theme="light"] .hex:hover .hex-inner {
+  background: rgba(124, 92, 252, 0.06);
+  box-shadow: 0 12px 32px rgba(124, 92, 252, 0.18);
 }
 
 /* ========== TIMELINE ========== */
@@ -1269,4 +1371,57 @@ footer p {
 body.loading {
   overflow: hidden;
   height: 100vh;
+}
+/* ========== HEXAGON CATEGORY COLORS ========== */
+
+/* Frontend - Purple */
+.hex[data-category="frontend"] .hex-inner i { color: rgba(124, 92, 252, 0.7); }
+.hex[data-category="frontend"]:hover .hex-inner {
+  background: rgba(124, 92, 252, 0.1);
+  border-color: rgba(124, 92, 252, 0.5);
+  box-shadow: 0 12px 32px rgba(124, 92, 252, 0.3);
+}
+.hex[data-category="frontend"]:hover .hex-inner i { color: #7c5cfc; }
+.hex[data-category="frontend"]:hover .hex-label { color: #a98cff; }
+.hex[data-category="frontend"] .hex-inner::before {
+  background: radial-gradient(circle at center, rgba(124, 92, 252, 0.25), transparent 70%);
+}
+
+/* Backend - Light Purple/Lavender */
+.hex[data-category="backend"] .hex-inner i { color: rgba(169, 140, 255, 0.7); }
+.hex[data-category="backend"]:hover .hex-inner {
+  background: rgba(169, 140, 255, 0.1);
+  border-color: rgba(169, 140, 255, 0.5);
+  box-shadow: 0 12px 32px rgba(169, 140, 255, 0.3);
+}
+.hex[data-category="backend"]:hover .hex-inner i { color: #a98cff; }
+.hex[data-category="backend"]:hover .hex-label { color: #c9b5ff; }
+.hex[data-category="backend"] .hex-inner::before {
+  background: radial-gradient(circle at center, rgba(169, 140, 255, 0.25), transparent 70%);
+}
+
+/* Database - Green */
+.hex[data-category="database"] .hex-inner i { color: rgba(74, 222, 128, 0.7); }
+.hex[data-category="database"]:hover .hex-inner {
+  background: rgba(74, 222, 128, 0.08);
+  border-color: rgba(74, 222, 128, 0.5);
+  box-shadow: 0 12px 32px rgba(74, 222, 128, 0.25);
+}
+.hex[data-category="database"]:hover .hex-inner i { color: #4ade80; }
+.hex[data-category="database"]:hover .hex-label { color: #86efac; }
+.hex[data-category="database"] .hex-inner::before {
+  background: radial-gradient(circle at center, rgba(74, 222, 128, 0.25), transparent 70%);
+}
+
+/* DevOps - Amber/Gold */
+.hex[data-category="devops"] .hex-inner i { color: rgba(251, 191, 36, 0.7); }
+.hex[data-category="devops"]:hover .hex-inner {
+  background: rgba(251, 191, 36, 0.08);
+  border-color: rgba(251, 191, 36, 0.5);
+  box-shadow: 0 12px 32px rgba(251, 191, 36, 0.25);
+}
+.hex[data-category="devops"]:hover .hex-inner i { color: #fbbf24; }
+.hex[data-category="devops"]:hover .hex-label { color: #fcd34d; }
+.hex[data-category="devops"] .hex-inner::before {
+  background: radial-gradient(circle at center, rgba(251, 191, 36, 0.25), transparent 70%);
 }

@@ -299,3 +299,19 @@ themeToggle.addEventListener('click', () => {
     themeToggle.style.transform = '';
   }, 150);
 });
+// ========== HEXAGON STAGGER REVEAL ==========
+const hexagons = document.querySelectorAll('.hex');
+
+const hexObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      const index = Array.from(hexagons).indexOf(entry.target);
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, index * 50);
+      hexObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+hexagons.forEach(hex => hexObserver.observe(hex));
