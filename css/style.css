@@ -988,3 +988,23 @@ footer p {
 .tab-content.animating {
   display: block;
 }
+/* ========== HIDE CURSOR ON TOUCH DEVICES ========== */
+@media (hover: none), (pointer: coarse), (max-width: 900px) {
+  .cursor,
+  .cursor-follower {
+    display: none !important;
+  }
+
+  body,
+  a,
+  button,
+  .skill-card,
+  .project-card,
+  .contact-card {
+    cursor: auto !important;
+  }
+
+  a, button, .tab-btn {
+    cursor: pointer !important;
+  }
+}
