@@ -89,6 +89,19 @@ body {
   transition: all 0.15s ease;
 }
 
+/* ========== SCROLL PROGRESS BAR ========== */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  z-index: 10001;
+  transition: width 0.05s linear;
+  box-shadow: 0 0 8px rgba(124, 92, 252, 0.6);
+}
+
 /* ========== NAVBAR ========== */
 #navbar {
   position: fixed;
@@ -1541,4 +1554,17 @@ body.loading {
 .hex[data-category="devops"]:hover .hex-label { color: #fcd34d; }
 .hex[data-category="devops"] .hex-inner::before {
   background: radial-gradient(circle at center, rgba(251, 191, 36, 0.25), transparent 70%);
+}
+
+/* ========== GRAIN / NOISE OVERLAY ========== */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 300px 300px;
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 5;
 }

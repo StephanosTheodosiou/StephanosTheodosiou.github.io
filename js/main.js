@@ -59,8 +59,9 @@ document.querySelectorAll('a, button, .skill-card, .project-card, .contact-card'
   });
 });
 
-// ---- Navbar Scroll Effect ----
+// ---- Navbar Scroll Effect + Scroll Progress ----
 const navbar = document.getElementById('navbar');
+const scrollProgress = document.getElementById('scrollProgress');
 
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) {
@@ -68,6 +69,11 @@ window.addEventListener('scroll', () => {
   } else {
     navbar.classList.remove('scrolled');
   }
+
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  scrollProgress.style.width = pct + '%';
 });
 
 // ---- Hamburger Mobile Menu ----
