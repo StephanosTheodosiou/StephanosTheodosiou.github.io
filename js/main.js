@@ -315,3 +315,18 @@ const hexObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 
 hexagons.forEach(hex => hexObserver.observe(hex));
+
+// ---- Back to Top ----
+const backToTop = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    backToTop.classList.add('visible');
+  } else {
+    backToTop.classList.remove('visible');
+  }
+});
+
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
