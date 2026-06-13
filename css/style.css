@@ -738,17 +738,33 @@ body {
   .hex-grid { gap: 6px 14px; max-width: 380px; }
 }
 
-/* Phone - 3 per row, smaller */
+/* Phone - 3 per row, CSS grid (no honeycomb offset — offset rows overflow on narrow screens) */
 @media (max-width: 480px) {
   .hex { width: 86px; height: 99px; }
   .hex-inner i { font-size: 20px; }
   .hex-label { font-size: 7px; }
 
-  .hex:nth-child(6n + 4) { margin-top: -32px; margin-left: 50px; }
+  /* Reset all nth-child honeycomb offsets from wider breakpoints */
+  .hex:nth-child(5n + 6),
+  .hex:nth-child(5n + 7),
+  .hex:nth-child(5n + 8),
+  .hex:nth-child(5n + 9),
+  .hex:nth-child(5n + 10),
+  .hex:nth-child(6n + 4),
   .hex:nth-child(6n + 5),
-  .hex:nth-child(6n + 6) { margin-top: -32px; }
+  .hex:nth-child(6n + 6) {
+    margin-top: 0;
+    margin-left: 0;
+  }
 
-  .hex-grid { gap: 4px 12px; max-width: 320px; }
+  .hex-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 86px);
+    gap: 8px;
+    max-width: none;
+    padding: 10px 0;
+  }
+
   .skill-legend { gap: 18px; }
   .legend-item { font-size: 9px; }
 }
@@ -759,19 +775,10 @@ body {
   .hex-inner i { font-size: 22px; }
   .hex-label { font-size: 8px; }
 
-  /* Reset 3-per-row offsets */
-  .hex:nth-child(6n + 4),
-  .hex:nth-child(6n + 5),
-  .hex:nth-child(6n + 6) {
-    margin-top: 0;
-    margin-left: 0;
+  .hex-grid {
+    grid-template-columns: repeat(2, 100px);
+    gap: 8px;
   }
-
-  /* 2-per-row offsets */
-  .hex:nth-child(4n + 3) { margin-top: -38px; margin-left: 57px; }
-  .hex:nth-child(4n + 4) { margin-top: -38px; }
-
-  .hex-grid { gap: 4px 14px; max-width: 240px; }
 }
 
 /* Light theme tweaks */
