@@ -686,22 +686,92 @@ body {
 .legend-dot.database { background: #4ade80; }
 .legend-dot.devops { background: #fbbf24; }
 
-/* Responsive Hexagons */
-@media (max-width: 768px) {
-  .hex { width: 100px; height: 115px; }
-  .hex-inner i { font-size: 24px; }
-  .hex-label { font-size: 9px; }
-  .hex:nth-child(5n + 6) { margin-left: 56px; }
+/* ========== RESPONSIVE HEXAGONS ========== */
 
-  /* Smaller offset for mobile - 4 per row */
-  .hex-grid { gap: 6px 12px; }
+/* ========== RESPONSIVE HEXAGONS ========== */
+
+/* Tablet - 4 per row */
+@media (max-width: 900px) {
+  .hex { width: 110px; height: 126px; }
+  .hex-inner i { font-size: 26px; }
+  .hex-label { font-size: 9px; }
+
+  /* Reset desktop 5-per-row offsets */
+  .hex:nth-child(5n + 6),
+  .hex:nth-child(5n + 7),
+  .hex:nth-child(5n + 8),
+  .hex:nth-child(5n + 9),
+  .hex:nth-child(5n + 10) {
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  /* 4-per-row offsets */
+  .hex:nth-child(8n + 5) { margin-top: -42px; margin-left: 63px; }
+  .hex:nth-child(8n + 6),
+  .hex:nth-child(8n + 7),
+  .hex:nth-child(8n + 8) { margin-top: -42px; }
+
+  .hex-grid { gap: 6px 14px; max-width: 540px; }
 }
 
-@media (max-width: 480px) {
-  .hex { width: 84px; height: 96px; }
-  .hex-inner i { font-size: 20px; }
+/* Small Tablet - 3 per row */
+@media (max-width: 640px) {
+  .hex { width: 100px; height: 115px; }
+  .hex-inner i { font-size: 22px; }
   .hex-label { font-size: 8px; }
-  .hex:nth-child(5n + 6) { margin-left: 48px; }
+
+  /* Reset 4-per-row offsets */
+  .hex:nth-child(8n + 5),
+  .hex:nth-child(8n + 6),
+  .hex:nth-child(8n + 7),
+  .hex:nth-child(8n + 8) {
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  /* 3-per-row offsets */
+  .hex:nth-child(6n + 4) { margin-top: -38px; margin-left: 57px; }
+  .hex:nth-child(6n + 5),
+  .hex:nth-child(6n + 6) { margin-top: -38px; }
+
+  .hex-grid { gap: 6px 14px; max-width: 380px; }
+}
+
+/* Phone - 3 per row, smaller */
+@media (max-width: 480px) {
+  .hex { width: 86px; height: 99px; }
+  .hex-inner i { font-size: 20px; }
+  .hex-label { font-size: 7px; }
+
+  .hex:nth-child(6n + 4) { margin-top: -32px; margin-left: 50px; }
+  .hex:nth-child(6n + 5),
+  .hex:nth-child(6n + 6) { margin-top: -32px; }
+
+  .hex-grid { gap: 4px 12px; max-width: 320px; }
+  .skill-legend { gap: 18px; }
+  .legend-item { font-size: 9px; }
+}
+
+/* Very Small Phone - 2 per row */
+@media (max-width: 360px) {
+  .hex { width: 100px; height: 115px; }
+  .hex-inner i { font-size: 22px; }
+  .hex-label { font-size: 8px; }
+
+  /* Reset 3-per-row offsets */
+  .hex:nth-child(6n + 4),
+  .hex:nth-child(6n + 5),
+  .hex:nth-child(6n + 6) {
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  /* 2-per-row offsets */
+  .hex:nth-child(4n + 3) { margin-top: -38px; margin-left: 57px; }
+  .hex:nth-child(4n + 4) { margin-top: -38px; }
+
+  .hex-grid { gap: 4px 14px; max-width: 240px; }
 }
 
 /* Light theme tweaks */
