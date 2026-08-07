@@ -23,7 +23,7 @@
 
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://stephanostheodosiou.github.io/" />
+    <meta property="og:url" content="https://stheodosiou.github.io/" />
     <meta
       property="og:title"
       content="Stephanos Theodosiou | Software Developer"
@@ -34,7 +34,7 @@
     />
     <meta
       property="og:image"
-      content="https://stephanostheodosiou.github.io/preview.png"
+      content="https://stheodosiou.github.io/preview.png"
     />
 
     <!-- Twitter -->
@@ -53,7 +53,7 @@
     />
     <meta
       property="twitter:image"
-      content="https://stephanostheodosiou.github.io/preview.png"
+      content="https://stheodosiou.github.io/preview.png"
     />
 
     <!-- Theme Color (mobile browser tab) -->
@@ -78,31 +78,30 @@
     />
   </head>
   <body>
-
-  <!-- ========== LOADING SCREEN ========== -->
-  <div class="loader" id="loader">
-    <div class="loader-content">
-      <div class="loader-logo">
-        <span class="bracket">&lt;</span>
-        <span class="letters">
-          <span class="letter">S</span><span class="letter">T</span>
-        </span>
-        <span class="bracket">/&gt;</span>
+    <!-- ========== LOADING SCREEN ========== -->
+    <div class="loader" id="loader">
+      <div class="loader-content">
+        <div class="loader-logo">
+          <span class="bracket">&lt;</span>
+          <span class="letters">
+            <span class="letter">S</span><span class="letter">T</span>
+          </span>
+          <span class="bracket">/&gt;</span>
+        </div>
+        <div class="loader-bar">
+          <div class="loader-progress"></div>
+        </div>
+        <div class="loader-text">
+          <span>LOADING</span>
+          <span class="loader-percent">0%</span>
+        </div>
       </div>
-      <div class="loader-bar">
-        <div class="loader-progress"></div>
-      </div>
-      <div class="loader-text">
-        <span>LOADING</span>
-        <span class="loader-percent">0%</span>
-      </div>
+      <div class="loader-grid"></div>
     </div>
-    <div class="loader-grid"></div>
-  </div>
 
-  <!-- Custom Cursor -->
-  <div class="cursor"></div>
-  <div class="cursor-follower"></div>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
 
     <!-- Scroll Progress Bar -->
     <div class="scroll-progress" id="scrollProgress"></div>
@@ -278,158 +277,160 @@
       </div>
     </section>
 
+    <!-- ========== SKILLS ========== -->
+    <section id="skills" class="section dark-section">
+      <div class="container">
+        <h2 class="section-title">My <span class="accent">Tech Stack</span></h2>
+        <p class="skills-intro">
+          Technologies I work with daily — from frontend frameworks to databases
+          and DevOps tools.
+        </p>
 
-<!-- ========== SKILLS ========== -->
-<section id="skills" class="section dark-section">
-  <div class="container">
-    <h2 class="section-title">My <span class="accent">Tech Stack</span></h2>
-    <p class="skills-intro">Technologies I work with daily — from frontend frameworks to databases and DevOps tools.</p>
+        <div class="hex-grid">
+          <!-- Row 1 - Frontend -->
+          <div class="hex reveal" data-category="frontend">
+            <div class="hex-inner">
+              <i class="fab fa-angular"></i>
+              <span class="hex-label">Angular</span>
+            </div>
+          </div>
+          <div class="hex reveal" data-category="frontend">
+            <div class="hex-inner">
+              <i class="fab fa-js"></i>
+              <span class="hex-label">TypeScript</span>
+            </div>
+          </div>
+          <div class="hex reveal" data-category="frontend">
+            <div class="hex-inner">
+              <i class="fab fa-react"></i>
+              <span class="hex-label">React</span>
+            </div>
+          </div>
+          <div class="hex reveal" data-category="frontend">
+            <div class="hex-inner">
+              <i class="fab fa-html5"></i>
+              <span class="hex-label">HTML5</span>
+            </div>
+          </div>
+          <div class="hex reveal" data-category="frontend">
+            <div class="hex-inner">
+              <i class="fab fa-css3-alt"></i>
+              <span class="hex-label">CSS3</span>
+            </div>
+          </div>
 
-  <div class="hex-grid">
-  <!-- Row 1 - Frontend -->
-  <div class="hex reveal" data-category="frontend">
-    <div class="hex-inner">
-      <i class="fab fa-angular"></i>
-      <span class="hex-label">Angular</span>
-    </div>
-  </div>
-  <div class="hex reveal" data-category="frontend">
-    <div class="hex-inner">
-      <i class="fab fa-js"></i>
-      <span class="hex-label">TypeScript</span>
-    </div>
-  </div>
-  <div class="hex reveal" data-category="frontend">
-    <div class="hex-inner">
-      <i class="fab fa-react"></i>
-      <span class="hex-label">React</span>
-    </div>
-  </div>
-  <div class="hex reveal" data-category="frontend">
-    <div class="hex-inner">
-      <i class="fab fa-html5"></i>
-      <span class="hex-label">HTML5</span>
-    </div>
-  </div>
-  <div class="hex reveal" data-category="frontend">
-    <div class="hex-inner">
-      <i class="fab fa-css3-alt"></i>
-      <span class="hex-label">CSS3</span>
-    </div>
-  </div>
+          <!-- Row 2 - Backend -->
+          <div class="hex reveal" data-category="backend">
+            <div class="hex-inner">
+              <i class="fas fa-server"></i>
+              <span class="hex-label">.NET</span>
+            </div>
+          </div>
+          <div class="hex reveal" data-category="backend">
+            <div class="hex-inner">
+              <i class="fas fa-hashtag"></i>
+              <span class="hex-label">C#</span>
+            </div>
+          </div>
+          <div class="hex reveal" data-category="backend">
+            <div class="hex-inner">
+              <i class="fab fa-java"></i>
+              <span class="hex-label">Java</span>
+            </div>
+          </div>
+          <div class="hex reveal" data-category="backend">
+            <div class="hex-inner">
+              <i class="fab fa-python"></i>
+              <span class="hex-label">Python</span>
+            </div>
+          </div>
 
-  <!-- Row 2 - Backend -->
-  <div class="hex reveal" data-category="backend">
-    <div class="hex-inner">
-      <i class="fas fa-server"></i>
-      <span class="hex-label">.NET</span>
-    </div>
-  </div>
-  <div class="hex reveal" data-category="backend">
-    <div class="hex-inner">
-      <i class="fas fa-hashtag"></i>
-      <span class="hex-label">C#</span>
-    </div>
-  </div>
-  <div class="hex reveal" data-category="backend">
-    <div class="hex-inner">
-      <i class="fab fa-java"></i>
-      <span class="hex-label">Java</span>
-    </div>
-  </div>
-  <div class="hex reveal" data-category="backend">
-    <div class="hex-inner">
-      <i class="fab fa-python"></i>
-      <span class="hex-label">Python</span>
-    </div>
-  </div>
+          <!-- Row 3 - Backend + Database -->
+          <div class="hex reveal" data-category="backend">
+            <div class="hex-inner">
+              <i class="fab fa-php"></i>
+              <span class="hex-label">PHP</span>
+            </div>
+          </div>
+          <div class="hex reveal" data-category="backend">
+            <div class="hex-inner">
+              <i class="fas fa-code"></i>
+              <span class="hex-label">C / C++</span>
+            </div>
+          </div>
+          <div class="hex reveal" data-category="database">
+            <div class="hex-inner">
+              <i class="fas fa-database"></i>
+              <span class="hex-label">SQL Server</span>
+            </div>
+          </div>
+          <div class="hex reveal" data-category="database">
+            <div class="hex-inner">
+              <i class="fas fa-database"></i>
+              <span class="hex-label">MySQL</span>
+            </div>
+          </div>
+          <div class="hex reveal" data-category="devops">
+            <div class="hex-inner">
+              <i class="fab fa-git-alt"></i>
+              <span class="hex-label">Git</span>
+            </div>
+          </div>
 
-  <!-- Row 3 - Backend + Database -->
-  <div class="hex reveal" data-category="backend">
-    <div class="hex-inner">
-      <i class="fab fa-php"></i>
-      <span class="hex-label">PHP</span>
-    </div>
-  </div>
-  <div class="hex reveal" data-category="backend">
-    <div class="hex-inner">
-      <i class="fas fa-code"></i>
-      <span class="hex-label">C / C++</span>
-    </div>
-  </div>
-  <div class="hex reveal" data-category="database">
-    <div class="hex-inner">
-      <i class="fas fa-database"></i>
-      <span class="hex-label">SQL Server</span>
-    </div>
-  </div>
-  <div class="hex reveal" data-category="database">
-    <div class="hex-inner">
-      <i class="fas fa-database"></i>
-      <span class="hex-label">MySQL</span>
-    </div>
-  </div>
-  <div class="hex reveal" data-category="devops">
-    <div class="hex-inner">
-      <i class="fab fa-git-alt"></i>
-      <span class="hex-label">Git</span>
-    </div>
-  </div>
+          <!-- Row 4 - DevOps -->
+          <div class="hex reveal" data-category="devops">
+            <div class="hex-inner">
+              <i class="fab fa-github"></i>
+              <span class="hex-label">GitHub</span>
+            </div>
+          </div>
+          <div class="hex reveal" data-category="devops">
+            <div class="hex-inner">
+              <i class="fab fa-microsoft"></i>
+              <span class="hex-label">Azure</span>
+            </div>
+          </div>
+          <div class="hex reveal" data-category="devops">
+            <div class="hex-inner">
+              <i class="fas fa-file-code"></i>
+              <span class="hex-label">Swagger</span>
+            </div>
+          </div>
+          <div class="hex reveal" data-category="frontend">
+            <div class="hex-inner">
+              <i class="fab fa-wordpress"></i>
+              <span class="hex-label">WordPress</span>
+            </div>
+          </div>
+          <div class="hex reveal" data-category="frontend">
+            <div class="hex-inner">
+              <i class="fab fa-figma"></i>
+              <span class="hex-label">Figma</span>
+            </div>
+          </div>
+        </div>
 
-  <!-- Row 4 - DevOps -->
-  <div class="hex reveal" data-category="devops">
-    <div class="hex-inner">
-      <i class="fab fa-github"></i>
-      <span class="hex-label">GitHub</span>
-    </div>
-  </div>
-  <div class="hex reveal" data-category="devops">
-    <div class="hex-inner">
-      <i class="fab fa-microsoft"></i>
-      <span class="hex-label">Azure</span>
-    </div>
-  </div>
-  <div class="hex reveal" data-category="devops">
-    <div class="hex-inner">
-      <i class="fas fa-file-code"></i>
-      <span class="hex-label">Swagger</span>
-    </div>
-  </div>
-  <div class="hex reveal" data-category="frontend">
-    <div class="hex-inner">
-      <i class="fab fa-wordpress"></i>
-      <span class="hex-label">WordPress</span>
-    </div>
-  </div>
-  <div class="hex reveal" data-category="frontend">
-  <div class="hex-inner">
-    <i class="fab fa-figma"></i>
-    <span class="hex-label">Figma</span>
-  </div>
-</div>
-</div>
-
-    <!-- Skill Categories Legend -->
-    <div class="skill-legend">
-      <div class="legend-item">
-        <span class="legend-dot frontend"></span>
-        <span>Frontend</span>
+        <!-- Skill Categories Legend -->
+        <div class="skill-legend">
+          <div class="legend-item">
+            <span class="legend-dot frontend"></span>
+            <span>Frontend</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot backend"></span>
+            <span>Backend</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot database"></span>
+            <span>Database</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot devops"></span>
+            <span>DevOps</span>
+          </div>
+        </div>
       </div>
-      <div class="legend-item">
-        <span class="legend-dot backend"></span>
-        <span>Backend</span>
-      </div>
-      <div class="legend-item">
-        <span class="legend-dot database"></span>
-        <span>Database</span>
-      </div>
-      <div class="legend-item">
-        <span class="legend-dot devops"></span>
-        <span>DevOps</span>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- ========== EXPERIENCE & EDUCATION ========== -->
     <section id="journey" class="section">
@@ -544,55 +545,129 @@
         <h2 class="section-title">
           Featured <span class="accent">Projects</span>
         </h2>
-        <div class="projects-grid">
-          <div class="project-card reveal" data-tilt>
-            <div class="project-top">
-              <div class="project-icon"><i class="fas fa-car"></i></div>
-              <div class="project-links">
-                <a
-                  href="https://github.com/tsekoss/EPL342_Team_Project"
-                  target="_blank"
-                  ><i class="fab fa-github"></i
-                ></a>
+
+        <!-- Tab Switcher -->
+        <div class="tab-switcher">
+          <button class="tab-btn active" data-tab="dev">
+            <i class="fas fa-code"></i> Software Development
+          </button>
+          <button class="tab-btn" data-tab="security">
+            <i class="fas fa-shield-halved"></i> Security
+          </button>
+        </div>
+
+        <!-- Software Development Tab -->
+        <div class="tab-content active" id="tab-dev">
+          <div class="projects-grid">
+            <div class="project-card reveal" data-tilt>
+              <div class="project-top">
+                <div class="project-icon"><i class="fas fa-car"></i></div>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/tsekoss/EPL342_Team_Project"
+                    target="_blank"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                </div>
+              </div>
+              <h3>OSRH – Ride-Hailing System</h3>
+              <p>
+                Full-stack ride-hailing platform built with PHP & SQL Server.
+                Features role-based access, GDPR compliance, real-time ride
+                matching with Haversine formula, and SERIALIZABLE transaction
+                isolation.
+              </p>
+              <div class="project-tags">
+                <span>PHP</span><span>SQL Server</span><span>GDPR</span
+                ><span>Team Project</span>
               </div>
             </div>
-            <h3>OSRH – Ride-Hailing System</h3>
-            <p>
-              Full-stack ride-hailing platform built with PHP & SQL Server.
-              Features role-based access, GDPR compliance, real-time ride
-              matching with Haversine formula, and SERIALIZABLE transaction
-              isolation.
-            </p>
-            <div class="project-tags">
-              <span>PHP</span><span>SQL Server</span><span>GDPR</span
-              ><span>Team Project</span>
+
+            <div class="project-card reveal" data-tilt>
+              <div class="project-top">
+                <div class="project-icon"><i class="fas fa-globe"></i></div>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/StephanosTheodosiou/StephanosTheodosiou.github.io"
+                    target="_blank"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                  <a
+                    href="https://stephanostheodosiou.github.io"
+                    target="_blank"
+                    ><i class="fas fa-external-link-alt"></i
+                  ></a>
+                </div>
+              </div>
+              <h3>Personal Portfolio Website</h3>
+              <p>
+                This very website — built from scratch with HTML, CSS &
+                JavaScript. Features 3D Three.js background, GSAP scroll
+                animations, custom avatar, glassmorphism design and full
+                mobile responsiveness.
+              </p>
+              <div class="project-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span
+                ><span>Three.js</span><span>GSAP</span>
+              </div>
+            </div>
+
+            <div class="project-card reveal" data-tilt>
+              <div class="project-top">
+                <div class="project-icon"><i class="fas fa-running"></i></div>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/StephanosTheodosiou/RunningLog"
+                    target="_blank"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                </div>
+              </div>
+              <h3>Garmin Running Log</h3>
+              <p>
+                Self-hosted Flask tool that authenticates directly with
+                Garmin Connect — full two-step MFA flow included — and
+                generates coach-ready CSV, text and PDF reports from your
+                running history, with optional per-lap pace/HR/split detail.
+                No third-party service ever sees your credentials or data.
+              </p>
+              <div class="project-tags">
+                <span>Python</span><span>Flask</span><span>ReportLab</span
+                ><span>JavaScript</span>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div class="project-card reveal" data-tilt>
-            <div class="project-top">
-              <div class="project-icon"><i class="fas fa-globe"></i></div>
-              <div class="project-links">
-                <a
-                  href="https://github.com/StephanosTheodosiou/StephanosTheodosiou.github.io"
-                  target="_blank"
-                  ><i class="fab fa-github"></i
-                ></a>
-                <a href="https://stephanostheodosiou.github.io" target="_blank"
-                  ><i class="fas fa-external-link-alt"></i
-                ></a>
+        <!-- Security Tab -->
+        <div class="tab-content" id="tab-security">
+          <div class="projects-grid">
+            <div class="project-card reveal" data-tilt>
+              <div class="project-top">
+                <div class="project-icon">
+                  <i class="fas fa-shield-halved"></i>
+                </div>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/StephanosTheodosiou/HealthCare-FHIR-security-scanner-"
+                    target="_blank"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                </div>
               </div>
-            </div>
-            <h3>Personal Portfolio Website</h3>
-            <p>
-              This very website — built from scratch with HTML, CSS &
-              JavaScript. Features 3D Three.js background, GSAP scroll
-              animations, custom avatar, glassmorphism design and full mobile
-              responsiveness.
-            </p>
-            <div class="project-tags">
-              <span>HTML</span><span>CSS</span><span>JavaScript</span
-              ><span>Three.js</span><span>GSAP</span>
+              <h3>FHIR Security Scanner</h3>
+              <p>
+                Full-stack security tool that scans healthcare FHIR servers
+                for real-world API misconfigurations — unauthenticated
+                Patient access, Broken Object-Level Authorization (BOLA)
+                across patient records, and missing SMART-on-FHIR security
+                metadata — via a pluggable .NET check-registry and a React
+                findings dashboard with severity, evidence and remediation.
+              </p>
+              <div class="project-tags">
+                <span>.NET 9</span><span>React</span><span>TypeScript</span
+                ><span>FHIR</span><span>OWASP API Security</span>
+              </div>
             </div>
           </div>
         </div>

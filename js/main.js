@@ -244,44 +244,48 @@ window.addEventListener('load', () => {
   }, 100);
 });
 // ---- Tab Switcher ----
-const tabBtns = document.querySelectorAll('.tab-btn');
-const tabContents = document.querySelectorAll('.tab-content');
+// Scoped per .tab-switcher so multiple independent tab groups on the page
+// (Journey, Projects, ...) don't interfere with each other's active tab.
+document.querySelectorAll('.tab-switcher').forEach(switcher => {
+  const scope = switcher.parentElement;
+  const tabBtns = switcher.querySelectorAll('.tab-btn');
 
-tabBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const targetTab = btn.getAttribute('data-tab');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetTab = btn.getAttribute('data-tab');
 
-    // Update buttons
-    tabBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+      // Update buttons
+      tabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
 
-    // Animate out current tab
-    const currentTab = document.querySelector('.tab-content.active');
-    if (currentTab) {
-      currentTab.style.opacity = '0';
-      currentTab.style.transform = 'translateY(16px)';
-      setTimeout(() => {
-        currentTab.classList.remove('active');
-        currentTab.style.opacity = '';
-        currentTab.style.transform = '';
-
-        // Animate in new tab
-        const newTab = document.getElementById('tab-' + targetTab);
-        newTab.classList.add('active');
-        newTab.classList.add('animating');
+      // Animate out current tab
+      const currentTab = scope.querySelector('.tab-content.active');
+      if (currentTab) {
+        currentTab.style.opacity = '0';
+        currentTab.style.transform = 'translateY(16px)';
         setTimeout(() => {
-          newTab.style.opacity = '1';
-          newTab.style.transform = 'translateY(0)';
-          newTab.classList.remove('animating');
+          currentTab.classList.remove('active');
+          currentTab.style.opacity = '';
+          currentTab.style.transform = '';
 
-          // Re-trigger reveal animations
-          newTab.querySelectorAll('.reveal').forEach(el => {
-            el.classList.remove('visible');
-            setTimeout(() => revealObserver.observe(el), 50);
-          });
-        }, 30);
-      }, 300);
-    }
+          // Animate in new tab
+          const newTab = scope.querySelector('#tab-' + targetTab);
+          newTab.classList.add('active');
+          newTab.classList.add('animating');
+          setTimeout(() => {
+            newTab.style.opacity = '1';
+            newTab.style.transform = 'translateY(0)';
+            newTab.classList.remove('animating');
+
+            // Re-trigger reveal animations
+            newTab.querySelectorAll('.reveal').forEach(el => {
+              el.classList.remove('visible');
+              setTimeout(() => revealObserver.observe(el), 50);
+            });
+          }, 30);
+        }, 300);
+      }
+    });
   });
 });
 // ========== THEME TOGGLE ==========
