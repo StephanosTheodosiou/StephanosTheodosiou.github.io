@@ -35,7 +35,7 @@
   particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
   const particleMat = new THREE.PointsMaterial({
-    color: 0x7c5cfc,
+    color: 0x14b8a6,
     size: 0.15,
     transparent: true,
     opacity: 0.6
@@ -47,7 +47,7 @@
   // ---- Wireframe Torus Knot ----
   const torusGeo = new THREE.TorusKnotGeometry(8, 2.5, 120, 16);
   const torusMat = new THREE.MeshBasicMaterial({
-    color: 0x7c5cfc,
+    color: 0x14b8a6,
     wireframe: true,
     transparent: true,
     opacity: 0.08
@@ -59,7 +59,7 @@
   // ---- Wireframe Icosahedron ----
   const icoGeo = new THREE.IcosahedronGeometry(5, 1);
   const icoMat = new THREE.MeshBasicMaterial({
-    color: 0xa98cff,
+    color: 0x5eead4,
     wireframe: true,
     transparent: true,
     opacity: 0.06
@@ -71,7 +71,7 @@
   // ---- Floating Ring ----
   const ringGeo = new THREE.TorusGeometry(6, 0.08, 8, 80);
   const ringMat = new THREE.MeshBasicMaterial({
-    color: 0x7c5cfc,
+    color: 0x14b8a6,
     transparent: true,
     opacity: 0.2
   });
@@ -83,7 +83,7 @@
   // ---- Second smaller Ring ----
   const ring2Geo = new THREE.TorusGeometry(3, 0.05, 8, 60);
   const ring2Mat = new THREE.MeshBasicMaterial({
-    color: 0xa98cff,
+    color: 0x5eead4,
     transparent: true,
     opacity: 0.15
   });
