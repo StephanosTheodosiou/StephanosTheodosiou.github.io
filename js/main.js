@@ -313,3 +313,93 @@ window.addEventListener('scroll', () => {
 backToTop.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+// ---- Project Modal ----
+const projectModal = document.getElementById('projectModal');
+const modalCloseBtn = document.querySelector('.modal-close');
+const modalMedia = document.getElementById('modalMedia');
+const modalTitle = document.getElementById('modalTitle');
+const modalDescription = document.getElementById('modalDescription');
+const modalTags = document.getElementById('modalTags');
+const modalGithub = document.getElementById('modalGithub');
+const modalDemo = document.getElementById('modalDemo');
+const modalVideoBtn = document.getElementById('modalVideoBtn');
+const modalDefaultMedia = modalMedia.innerHTML;
+
+let lastFocusedEl = null;
+
+function getYouTubeEmbedUrl(url) {
+  const match = url.match(/(?:youtu\.be\/|[?&]v=)([\w-]{11})/);
+  return match ? `https://www.youtube.com/embed/${match[1]}?autoplay=1` : url;
+}
+
+function openProjectModal(card) {
+  const title = card.querySelector('h3')?.textContent.trim() || '';
+  const description = card.querySelector('.project-desc')?.textContent.trim() || '';
+  const tags = Array.from(card.querySelectorAll('.project-tags span')).map(t => t.textContent);
+  const githubLink = card.querySelector('.link-github');
+  const demoLink = card.querySelector('.link-demo');
+  const videoUrl = card.dataset.video || '';
+
+  const photo = card.querySelector('.frame-photo');
+
+  modalTitle.textContent = title;
+  modalDescription.textContent = description;
+  modalTags.innerHTML = tags.map(t => `<span>${t}</span>`).join('');
+  modalMedia.innerHTML = photo
+    ? `<img src="${photo.src}" alt="${title} preview" />`
+    : modalDefaultMedia;
+
+  modalGithub.hidden = !githubLink;
+  if (githubLink) modalGithub.href = githubLink.href;
+
+  modalDemo.hidden = !demoLink;
+  if (demoLink) modalDemo.href = demoLink.href;
+
+  modalVideoBtn.hidden = !videoUrl;
+  modalVideoBtn.dataset.video = videoUrl;
+
+  lastFocusedEl = document.activeElement;
+  projectModal.classList.add('open');
+  projectModal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
+  modalCloseBtn.focus();
+}
+
+function closeProjectModal() {
+  projectModal.classList.remove('open');
+  projectModal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+  if (lastFocusedEl) lastFocusedEl.focus();
+}
+
+document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('click', (e) => {
+    if (e.target.closest('a')) return;
+    openProjectModal(card);
+  });
+  card.addEventListener('keydown', (e) => {
+    if ((e.key === 'Enter' || e.key === ' ') && !e.target.closest('a')) {
+      e.preventDefault();
+      openProjectModal(card);
+    }
+  });
+});
+
+document.querySelectorAll('[data-modal-close]').forEach(el => {
+  el.addEventListener('click', closeProjectModal);
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && projectModal.classList.contains('open')) {
+    closeProjectModal();
+  }
+});
+
+modalVideoBtn.addEventListener('click', () => {
+  const url = modalVideoBtn.dataset.video;
+  if (!url) return;
+  modalMedia.innerHTML = /youtu\.?be/.test(url)
+    ? `<iframe src="${getYouTubeEmbedUrl(url)}" allow="autoplay; fullscreen" allowfullscreen></iframe>`
+    : `<video src="${url}" controls autoplay></video>`;
+});
